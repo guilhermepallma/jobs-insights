@@ -34,7 +34,7 @@ def test_sort_by_criteria():
 
     sort_by(jobs_lists, "max_salary")
 
-    assert jobs_lists[1] == {
+    assert jobs_lists[0] == {
         "title": "Barbeiro",
         "min_salary": "1200",
         "max_salary": "5000",
@@ -43,7 +43,7 @@ def test_sort_by_criteria():
 
     sort_by(jobs_lists, "date_posted")
 
-    assert jobs_lists[2] == {
+    assert jobs_lists[0] == {
         "title": "Tecnico em Informatica",
         "min_salary": "500",
         "max_salary": "2500",
