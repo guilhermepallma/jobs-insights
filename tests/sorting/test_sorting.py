@@ -2,50 +2,103 @@ from src.pre_built.sorting import sort_by
 
 
 def test_sort_by_criteria():
-    jobs_lists = [
+    jobs_list = [
         {
-            "title": "Pintor",
-            "min_salary": "1000",
-            "max_salary": "2500",
-            "date_posted": "2017-07-07",
+            "min_salary": 900,
+            "max_salary": 4000,
+            "date_posted": "2023-01-03",
         },
         {
-            "title": "Barbeiro",
-            "min_salary": "1200",
-            "max_salary": "5000",
-            "date_posted": "2018-08-08",
+            "min_salary": 800,
+            "max_salary": 3000,
+            "date_posted": "2022-06-01",
         },
         {
-            "title": "Tecnico em Informatica",
-            "min_salary": "500",
-            "max_salary": "2500",
-            "date_posted": "2019-09-09",
+            "min_salary": 700,
+            "max_salary": 2000,
+            "date_posted": "2021-03-05",
+        },
+        {
+            "min_salary": 500,
+            "max_salary": 1500,
+            "date_posted": "2020-08-11",
         },
     ]
 
-    sort_by(jobs_lists, "min_salary")
+    sort_by_max = [
+        {
+            "min_salary": 900,
+            "max_salary": 4000,
+            "date_posted": "2023-01-03",
+        },
+        {
+            "min_salary": 800,
+            "max_salary": 3000,
+            "date_posted": "2022-06-01",
+        },
+        {
+            "min_salary": 700,
+            "max_salary": 2000,
+            "date_posted": "2021-03-05",
+        },
+        {
+            "min_salary": 500,
+            "max_salary": 1500,
+            "date_posted": "2020-08-11",
+        },
+    ]
 
-    assert jobs_lists[0] == {
-        "title": "Pintor",
-        "min_salary": "1000",
-        "max_salary": "2500",
-        "date_posted": "2017-07-07",
-    }
+    sort_by(jobs_list, "max_salary")
+    assert jobs_list == sort_by_max
 
-    sort_by(jobs_lists, "max_salary")
+    sort_by_min = [
+        {
+            "min_salary": 500,
+            "max_salary": 1500,
+            "date_posted": "2020-08-11",
+        },
+        {
+            "min_salary": 700,
+            "max_salary": 2000,
+            "date_posted": "2021-03-05",
+        },
+        {
+            "min_salary": 800,
+            "max_salary": 3000,
+            "date_posted": "2022-06-01",
+        },
+        {
+            "min_salary": 900,
+            "max_salary": 4000,
+            "date_posted": "2023-01-03",
+        },
+    ]
 
-    assert jobs_lists[0] == {
-        "title": "Barbeiro",
-        "min_salary": "1200",
-        "max_salary": "5000",
-        "date_posted": "2018-08-08",
-    }
+    sort_by(jobs_list, "min_salary")
+    assert jobs_list == sort_by_min
 
-    sort_by(jobs_lists, "date_posted")
+    sort_by_date = [
+        {
+            "min_salary": 900,
+            "max_salary": 4000,
+            "date_posted": "2023-01-03",
+        },
+        {
+            "min_salary": 800,
+            "max_salary": 3000,
+            "date_posted": "2022-06-01",
+        },
+        {
+            "min_salary": 700,
+            "max_salary": 2000,
+            "date_posted": "2021-03-05",
+        },
+        {
+            "min_salary": 500,
+            "max_salary": 1500,
+            "date_posted": "2020-08-11",
+        },
+    ]
 
-    assert jobs_lists[0] == {
-        "title": "Tecnico em Informatica",
-        "min_salary": "500",
-        "max_salary": "2500",
-        "date_posted": "2019-09-09",
-    }
+    sort_by(jobs_list, "date_posted")
+    assert jobs_list == sort_by_date
